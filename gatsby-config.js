@@ -16,7 +16,7 @@ const config = {
   // Your username on Twitter (without @). Used in SEO meta tags
   twitterUsername: 'p1t1ch',
   // Path to main favicon. Recommended size: 512x512. Other sizes are generated automatically
-  favicon: 'src/images/favicon.png',
+  favicon: 'src/icons/app-logo.svg',
   // Theme color. Used as color of device toolbar in supported browsers
   themeColor: '#362066',
   // Background color. Used as background on PWA launch screen. Recommended to make it the same as body color

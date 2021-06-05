@@ -10,8 +10,6 @@ interface SeoQuery {
       keywords: string[]
       baseUrl: string
       lang: string
-      facebookUsername?: string
-      twitterUsername?: string
     }
   }
 }
@@ -40,8 +38,6 @@ const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
           keywords
           baseUrl
           lang
-          facebookUsername
-          twitterUsername
         }
       }
     }
@@ -54,8 +50,6 @@ const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
     keywords: keywords || defaults.keywords,
     url: pathname && `${defaults.baseUrl}${pathname}`,
     lang: defaults.lang,
-    facebook: defaults.facebookUsername,
-    twitter: defaults.twitterUsername && `@${defaults.twitterUsername}`,
     image: image && `${defaults.baseUrl}${image}`,
   }
 
@@ -74,7 +68,6 @@ const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
       {seo.url && <meta property="og:url" content={seo.url} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
       {seo.image && <meta property="og:image:alt" content={seo.description} />}
-      {seo.facebook && <meta property="og:site_name" content={seo.facebook} />}
 
       <meta name="twitter:card" content={seo.image ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={seo.title} />
@@ -82,7 +75,6 @@ const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
       {seo.url && <meta property="twitter:url" content={seo.url} />}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       {seo.image && <meta name="twitter:image:alt" content={seo.description} />}
-      {seo.twitter && <meta name="twitter:creator" content={seo.twitter} />}
     </Helmet>
   )
 }
