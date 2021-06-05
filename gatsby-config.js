@@ -6,7 +6,7 @@ const config = {
   // Project description. Used in SEO meta tag and by PWA
   description: 'Trip calculator comparing gas usage between different travel speeds',
   // Keywords describing the project. Used in SEO meta tag
-  keywords: ['gatsby', 'gatsby-starter', 'react', 'typescript', 'jest', 'pwa', 'graphql'],
+  keywords: ['gatsby', 'react', 'typescript', 'jest', 'pwa', 'graphql'],
   // Absolute deployment path (without trailing slash). Used as base URL in SEO meta tags
   baseUrl: 'https://time-vs-gas.vanska.dev',
   // Site language. Added in html tag and PWA manifest

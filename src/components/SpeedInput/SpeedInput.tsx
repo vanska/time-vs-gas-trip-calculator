@@ -1,6 +1,7 @@
 import React from 'react'
 import { theme } from '../../styles/theme'
 import { IconPlus, IconMinus } from '../Icons/Icons'
+import { inputBorder } from '../../styles/input'
 
 export type ButtonPropTypes = { type: 'increment' | 'decrement'; index: number }
 
@@ -18,33 +19,34 @@ export function SpeedInput({
   buttonClickHandler: ({ type, index }: ButtonPropTypes) => void
 }) {
   return (
-    <label css={{ display: 'flex', textAlign: 'center' }}>
+    <label css={{ display: 'flex', textAlign: 'center', gap: '1rem' }}>
       <div>
         <input
           css={{
             flex: '0 1 auto',
             fontWeight: 700,
             color: theme.colors.blue,
-            width: '100%',
-            outline: 0,
-            border: 'none',
+            width: '5rem',
             textAlign: 'center',
             fontSize: '2rem',
             backgroundColor: 'transparent',
+            ...inputBorder,
           }}
           name={index.toString()}
           type="number"
           onChange={onChange}
           value={speed ? speed : ''}
         />
-        <div>km/h</div>
-        <div>{`${consumption.toFixed(1)} L /100km`}</div>
+        <div css={{ fontWeight: 500 }}>
+          <div>km/h</div>
+          <div>{`${consumption.toFixed(1)} L /100km`}</div>
+        </div>
       </div>
-      <div css={{ flex: '0 1 auto' }}>
-        <button onClick={() => buttonClickHandler({ type: 'increment', index: index })}>
+      <div css={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <button tabIndex={-1} onClick={() => buttonClickHandler({ type: 'increment', index: index })}>
           <IconPlus />
         </button>
-        <button onClick={() => buttonClickHandler({ type: 'decrement', index: index })}>
+        <button tabIndex={-1} onClick={() => buttonClickHandler({ type: 'decrement', index: index })}>
           <IconMinus />
         </button>
       </div>

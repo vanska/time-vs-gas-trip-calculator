@@ -30,7 +30,7 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ value
         setMaxValue(newMaxValue)
         onChange('2')
       }
-    }, 300)
+    }, 400)
   }
 
   return (
@@ -46,6 +46,7 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ value
           max={maxValue}
           value={value}
           type="range"
+          tabIndex={-1}
           onChange={onSliderChangeInternalHandler}
           css={{
             display: 'block',
@@ -57,21 +58,16 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ value
             borderRadius: 9999,
             color: 'inherit',
             background: theme.colors.gradient.blue,
-            transition: 'all .3s ease-in-out',
-            '> *': {
-              transition: 'all .3s ease-in-out',
-            },
             ':focus': {
               outline: 'none',
               color: 'primary',
             },
             '&::-webkit-slider-thumb': {
-              transition: 'all .3s ease-in-out',
               appearance: 'none',
               width: '2rem',
               height: '2rem',
               background: theme.colors.background.grey,
-
+              outline: '2px',
               border: `6px solid ${theme.colors.blue}`,
               borderRadius: 9999,
             },

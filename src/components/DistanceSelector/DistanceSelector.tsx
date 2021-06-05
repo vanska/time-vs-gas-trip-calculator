@@ -6,6 +6,7 @@ import { setDistance } from '../../redux/calculatorSlice'
 import { theme } from '../../styles/theme'
 import { distanceRegex } from '../../utils/regExes'
 import { titleStyle } from '../../styles/text'
+import { inputBorder } from '../../styles/input'
 
 export function DistanceSelector() {
   const dispatch = useAppDispatch()
@@ -26,23 +27,17 @@ export function DistanceSelector() {
     <div css={{ padding: '2rem' }}>
       <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
         <div css={css(titleStyle, { flex: 1 })}>Trip distance</div>
-        <label css={{ display: 'flex', flex: 1 }}>
+        <label css={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <input
             css={{
               fontWeight: 700,
-              flex: 1,
               width: '6rem',
               color: theme.colors.blue,
-              outlineColor: theme.colors.blue,
-              border: '2px solid transparent',
-              borderRadius: '8px',
+              ...inputBorder,
               padding: '.25rem',
               textAlign: 'center',
               fontSize: '2rem',
               backgroundColor: 'transparent',
-              '&:hover,&:focus': {
-                borderColor: theme.colors.border.input,
-              },
             }}
             type="number"
             onChange={distanceInputHandler}
