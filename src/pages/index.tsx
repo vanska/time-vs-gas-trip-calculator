@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '@/components/Layout'
-import Seo from '@/components/Seo'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 import { CarSelection } from '../components/CarSelection/CarSelection'
 import { DistanceSelector } from '../components/DistanceSelector/DistanceSelector'
 import { SpeedSelector } from '../components/SpeedSelector/SpeedSelector'

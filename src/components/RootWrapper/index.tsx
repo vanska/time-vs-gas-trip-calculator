@@ -43,7 +43,7 @@ const RootWrapper = ({ children }: RootWrapperProps) => {
           },
           input: {
             '::-webkit-outer-spin-button,::-webkit-inner-spin-button ': {
-              '-webkitAppearance': 'none',
+              webkitAppearance: 'none',
               margin: 0,
             },
           },

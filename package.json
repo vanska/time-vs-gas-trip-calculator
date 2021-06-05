@@ -7,9 +7,6 @@
     "start": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "serve": "gatsby serve -H 0.0.0.0 -p 8000",
-    "storybook": "start-storybook -s public",
-    "storybook:build": "build-storybook -s public -o docs",
-    "storybook:serve": "serve docs -l 8080",
     "test": "jest --watch --passWithNoTests",
     "test:coverage": "jest --coverage --passWithNoTests",
     "coverage": "open ./coverage/lcov-report/index.html",
@@ -32,8 +29,7 @@
     "node_modules",
     "public",
     "coverage",
-    "docs",
-    "!.storybook"
+    "docs"
   ],
   "browserslist": [
     "last 2 Chrome major versions",
@@ -71,11 +67,6 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
-    "@storybook/addon-a11y": "^6.2.8",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-webpack5": "^6.2.8",
-    "@storybook/react": "^6.2.8",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.3",
@@ -105,6 +96,7 @@
     "jest-watch-typeahead": "^0.6.2",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "react-refresh": "^0.10.0",
     "serve": "^11.3.2",
     "terser-webpack-plugin": "^5.1.1",
     "typescript": "^4.2.4",
