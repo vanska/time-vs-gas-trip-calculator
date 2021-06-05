@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-vadyan",
-  "version": "2.1.0",
+  "name": "time-vs-gas-trip-calculator",
+  "version": "1.0.0",
   "license": "MIT",
-  "author": "p1t1ch <belobeev.kirill@gmail.com>",
+  "author": "mikkovanska.com@gmail.com>",
   "scripts": {
     "start": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
@@ -67,8 +67,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-redux": "^7.2.4",
-    "tailwindcss": "2.1.1"
+    "react-redux": "^7.2.4"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
