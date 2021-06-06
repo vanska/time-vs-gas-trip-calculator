@@ -7,6 +7,7 @@ import { speedRegEx } from '../../utils/regExes'
 import { titleStyle } from '../../styles/text'
 import { pxApp } from '../../styles/padding'
 import { flexColumnBase } from '../../styles/flex'
+import { SPEED_MAX_VALUE } from '../../constants/constants'
 
 export function SpeedSelector() {
   const dispatch = useAppDispatch()
@@ -16,7 +17,7 @@ export function SpeedSelector() {
   function speedInputChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     const speedIndex = e.currentTarget.name
     const inputValue = e.currentTarget.value
-    if (inputValue === '' || speedRegEx.test(inputValue)) {
+    if (inputValue === '' || (speedRegEx.test(inputValue) && +inputValue <= SPEED_MAX_VALUE)) {
       dispatch(setSpeed({ index: +speedIndex, value: +inputValue }))
     }
   }

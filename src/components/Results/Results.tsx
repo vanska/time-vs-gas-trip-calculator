@@ -39,16 +39,20 @@ export function Results() {
           alignItems: 'center',
         }}
       >
-        {tripTimes.map((time, i) => (
-          <div key={`tripTime-${i}`} css={{ flex: 1, order: i }}>
-            <TimeDisplay display="short" minutes={time} />
-          </div>
-        ))}
+        {tripTimes.map((time, i) =>
+          time !== Infinity ? (
+            <div key={`tripTime-${i}`} css={{ flex: 1, order: i }}>
+              <TimeDisplay display="short" minutes={time} />
+            </div>
+          ) : (
+            <div css={css(totalsNumber, { flex: 1, order: i })}>-</div>
+          )
+        )}
         <div css={{ order: 1.5, color: theme.colors.blue, fontWeight: 500, fontSize: '1.125rem' }}>vs</div>
       </div>
       <div css={resultCard}>
         <div>Difference in trip time</div>
-        {tripTimeDifference ? (
+        {tripTimeDifference > 0 && tripTimeDifference !== Infinity ? (
           <TimeDisplay display="long" minutes={tripTimeDifference} />
         ) : (
           <div css={totalsNumber}>-</div>

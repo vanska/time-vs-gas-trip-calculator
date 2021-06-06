@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { SliderTypes } from '../../types'
 import { theme } from '../../styles/theme'
-import { INITIAL_SLIDER_MAX_VALUE, SLIDER_SPEED_MAX_VALUE } from '../../constants/constants'
+import { INITIAL_SLIDER_MAX_VALUE, SPEED_MAX_VALUE } from '../../constants/constants'
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 import { setDistance, setSpeed } from '../../redux/calculatorSlice'
 
@@ -73,7 +73,7 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ type,
         <input
           ref={ref}
           min={1}
-          max={type === 'distance' ? distanceMaxValue : SLIDER_SPEED_MAX_VALUE}
+          max={type === 'distance' ? distanceMaxValue : SPEED_MAX_VALUE}
           value={type === 'distance' ? distance : speeds[speedIndex ? speedIndex : 0]}
           name={type === 'speed' && speedIndex ? speedIndex.toString() : ''}
           type="range"

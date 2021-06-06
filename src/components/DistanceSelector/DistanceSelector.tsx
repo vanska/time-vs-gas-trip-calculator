@@ -22,7 +22,15 @@ export function DistanceSelector() {
 
   return (
     <div css={pxApp}>
-      <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: theme.space[2],
+          gap: theme.space[2],
+        }}
+      >
         <div css={css(titleStyle, { flex: 1 })}>Set trip distance</div>
         <label css={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <input
@@ -31,9 +39,9 @@ export function DistanceSelector() {
               width: '6rem',
               color: theme.colors.blue,
               ...inputBorder,
-              padding: '.25rem',
+              padding: theme.space[0],
               textAlign: 'center',
-              fontSize: '2rem',
+              fontSize: theme.text.fontSize.xl,
               backgroundColor: 'transparent',
             }}
             type="number"

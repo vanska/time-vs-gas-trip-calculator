@@ -7,6 +7,7 @@ import { titleStyle } from '../../styles/text'
 import { pxApp } from '../../styles/padding'
 import { flexColumnBase } from '../../styles/flex'
 import { CarCard } from '../CarCard/CarCard'
+import { theme } from '../../styles/theme'
 
 export function CarSelection() {
   const dispatch = useAppDispatch()
@@ -14,7 +15,7 @@ export function CarSelection() {
   return (
     <div css={css(pxApp, flexColumnBase(1))}>
       <div css={titleStyle}>Select a car</div>
-      <div css={{ display: 'flex', gap: '.5rem', justifyContent: 'space-between', paddingTop: '1rem' }}>
+      <div css={{ display: 'flex', gap: theme.space[1], justifyContent: 'space-between', paddingTop: theme.space[1] }}>
         {CARS.map(car => (
           <CarCard
             key={car.name}

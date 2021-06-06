@@ -25,11 +25,14 @@ export const theme = {
   },
   text: {
     fontSize: {
-      xs: '.75rem',
+      s: '.75rem',
+      m: '1.125rem',
+      l: '1.25rem',
+      xl: '2rem',
     },
   },
   border: {
     radius: '.5rem',
   },
-  space: [0.25, 0.5, 1, 2],
+  space: ['0.25rem', '0.5rem', '1rem', '2rem'],
 }

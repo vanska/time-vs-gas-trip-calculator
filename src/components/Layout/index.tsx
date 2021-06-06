@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import { Header } from '../Header/Header'
-import { mq } from '../../styles/media'
+import { pyApp } from '../../styles/padding'
 import { theme } from '../../styles/theme'
 import { flexColumnBase } from '../../styles/flex'
 
@@ -15,13 +15,9 @@ const Layout = ({ children, ...props }: LayoutProps) => {
       <Header />
       <main
         {...props}
-        css={css(flexColumnBase(3), {
+        css={css(pyApp, flexColumnBase(3), {
           margin: 'auto',
-          paddingTop: theme.space[3] + 'rem',
-          paddingBottom: theme.space[3] + 'rem',
-          [mq.s]: {
-            maxWidth: theme.breakpoints.s,
-          },
+          maxWidth: theme.breakpoints.s,
         })}
       >
         {children}

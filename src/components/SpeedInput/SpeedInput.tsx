@@ -39,7 +39,7 @@ export function SpeedInput({
           value={speed ? speed : ''}
         />
         <div css={{ fontWeight: 500 }}>
-          <div css={{ fontSize: theme.text.fontSize.xs }}>{`${consumption.toFixed(1)} L /100km`}</div>
+          <div css={{ fontSize: theme.text.fontSize.s }}>{`${consumption.toFixed(1)} L /100km`}</div>
         </div>
       </label>
       <Slider type="speed" speedIndex={index} />
