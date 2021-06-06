@@ -45,7 +45,7 @@ git clone https://github.com/vanska/time-vs-gas-trip-calculator
 cd time-vs-gas-trip-calculator
 npm install
 # Local development
-npm start
+npm run start
 ```
 
 ## Deploying to Github pages
