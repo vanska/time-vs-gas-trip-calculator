@@ -1,0 +1,2 @@
+(self.webpackChunktime_vs_gas_trip_calculator=self.webpackChunktime_vs_gas_trip_calculator||[]).push([[218],{938:function(t,u,a){"use strict";a.r(u);var e=a(7294),c=a(5444);u.default=function(){return(0,e.useEffect)((function(){(0,c.navigate)("/")}),[]),null}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-ab5265fdb28694fb3614.js.map
