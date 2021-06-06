@@ -18,9 +18,9 @@ const config = {
   // Path to main favicon. Recommended size: 512x512. Other sizes are generated automatically
   favicon: 'src/icons/app-logo.svg',
   // Theme color. Used as color of device toolbar in supported browsers
-  themeColor: '#362066',
+  themeColor: '#0074FD',
   // Background color. Used as background on PWA launch screen. Recommended to make it the same as body color
-  backgroundColor: '#362066',
+  backgroundColor: '#F6F6F6',
 }
 
 module.exports = {

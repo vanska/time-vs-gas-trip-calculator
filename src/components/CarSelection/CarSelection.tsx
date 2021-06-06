@@ -22,7 +22,7 @@ function CarCard({
         transform: selected ? `translateY(-1rem)` : 'translateY(0)',
         transition: 'transform .1s ease-in-out, box-shadow .1s ease-in-out',
         flex: 1,
-        padding: '2rem',
+        padding: '1rem',
         borderRadius: '8px',
         outlineColor: theme.colors.blue,
         border: `1px solid ${theme.colors.border.input}`,
@@ -47,9 +47,9 @@ export function CarSelection() {
   const dispatch = useAppDispatch()
   const selectedCar = useAppSelector(state => state.calculator.selectedCar)
   return (
-    <div css={{ padding: '2rem' }}>
+    <div css={{ padding: '1rem' }}>
       <h2 css={{ fontWeight: 700, marginBottom: '1rem' }}>Car selection</h2>
-      <div css={{ display: 'flex', gap: '1rem', justifyContent: 'center', paddingTop: '1rem' }}>
+      <div css={{ display: 'flex', gap: '.5rem', justifyContent: 'space-between', paddingTop: '1rem' }}>
         {CARS.map(car => (
           <CarCard
             key={car.name}

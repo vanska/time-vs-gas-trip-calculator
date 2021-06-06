@@ -1,50 +1,81 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { SliderTypes } from '../../types'
 import { theme } from '../../styles/theme'
-import { INITIAL_SLIDER_MAX_VALUE } from '../../constants/constants'
+import { INITIAL_SLIDER_MAX_VALUE, SLIDER_SPEED_MAX_VALUE } from '../../constants/constants'
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
+import { setDistance, setSpeed } from '../../redux/calculatorSlice'
+
+export type SliderOnChangePropTypes = { value: string; index?: number }
 
 type Props = {
-  value: number
-  onChange: (value: string) => void
+  type: SliderTypes
+  speedIndex?: number
 }
 
 export type TInputRef = HTMLInputElement
 
-export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ value, onChange }: Props, ref) {
-  const [maxValue, setMaxValue] = useState(INITIAL_SLIDER_MAX_VALUE)
+export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ type, speedIndex }: Props, ref) {
+  const [distanceMaxValue, setDistanceMaxValue] = useState(INITIAL_SLIDER_MAX_VALUE)
 
-  if (value > maxValue) {
-    setMaxValue(value)
-  }
+  const dispatch = useAppDispatch()
+  const distance = useAppSelector(state => state.calculator.distance)
+  const speeds = useAppSelector(state => state.calculator.speeds)
+
+  useEffect(() => {
+    if (distance > distanceMaxValue) {
+      setDistanceMaxValue(distance)
+    }
+  }, [distance, distanceMaxValue])
 
   function onSliderChangeInternalHandler(e: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = e.currentTarget.value
-    onChange(inputValue)
-    setTimeout(() => {
-      if (+inputValue === maxValue && maxValue < 9000) {
-        const newMaxValue = maxValue + INITIAL_SLIDER_MAX_VALUE
-        setMaxValue(newMaxValue)
-        onChange((newMaxValue - 1).toString())
-      }
-      if (+inputValue === 1 && maxValue > INITIAL_SLIDER_MAX_VALUE) {
-        const newMaxValue = maxValue - INITIAL_SLIDER_MAX_VALUE
-        setMaxValue(newMaxValue)
-        onChange('2')
-      }
-    }, 400)
+    switch (type) {
+      case 'distance':
+        {
+          dispatch(setDistance(+inputValue))
+          // onChange({ value: inputValue })
+          setTimeout(() => {
+            if (+inputValue === distanceMaxValue && distanceMaxValue < 9000) {
+              const newdistanceMaxValue = distanceMaxValue + INITIAL_SLIDER_MAX_VALUE
+              setDistanceMaxValue(newdistanceMaxValue)
+              dispatch(setDistance(newdistanceMaxValue - 1))
+              // onChange({ value: (newdistanceMaxValue - 1).toString() })
+            }
+            if (+inputValue === 1 && distanceMaxValue > INITIAL_SLIDER_MAX_VALUE) {
+              const newdistanceMaxValue = distanceMaxValue - INITIAL_SLIDER_MAX_VALUE
+              setDistanceMaxValue(newdistanceMaxValue)
+              dispatch(setDistance(2))
+              // onChange({ value: '2' })
+            }
+          }, 400)
+        }
+        break
+      case 'speed':
+        {
+          const speedIndex = e.currentTarget.name
+          dispatch(setSpeed({ index: +speedIndex, value: +inputValue }))
+        }
+        break
+      default:
+        break
+    }
   }
 
   return (
     <div>
-      <div css={{ display: 'flex', justifyContent: 'space-between', color: theme.colors.text.secondary }}>
-        <div>1 km</div>
-        <div>{`${maxValue} km`}</div>
-      </div>
+      {type === 'distance' ? (
+        <div css={{ display: 'flex', justifyContent: 'space-between', color: theme.colors.text.secondary }}>
+          <div>1 km</div>
+          <div>{`${distanceMaxValue} km`}</div>
+        </div>
+      ) : null}
       <label css={{ height: '2rem', position: 'relative', display: 'flex', alignItems: 'center' }}>
         <input
           ref={ref}
           min={1}
-          max={maxValue}
-          value={value}
+          max={type === 'distance' ? distanceMaxValue : SLIDER_SPEED_MAX_VALUE}
+          value={type === 'distance' ? distance : speeds[speedIndex ? speedIndex : 0]}
+          name={type === 'speed' && speedIndex ? speedIndex.toString() : ''}
           type="range"
           tabIndex={-1}
           onChange={onSliderChangeInternalHandler}

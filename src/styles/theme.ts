@@ -19,4 +19,9 @@ export const theme = {
       input: '#C9C9C9',
     },
   },
+  text: {
+    fontSize: {
+      xs: '.75rem',
+    },
+  },
 }

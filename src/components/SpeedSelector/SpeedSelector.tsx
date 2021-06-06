@@ -1,8 +1,10 @@
 import React from 'react'
+import { css } from '@emotion/react'
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 import { setSpeed } from '../../redux/calculatorSlice'
 import { SpeedInput, ButtonPropTypes } from '../SpeedInput/SpeedInput'
 import { speedRegEx } from '../../utils/regExes'
+import { titleStyle } from '../../styles/text'
 
 export function SpeedSelector() {
   const dispatch = useAppDispatch()
@@ -17,22 +19,12 @@ export function SpeedSelector() {
     }
   }
 
-  function buttonClickHandler({ type, index }: ButtonPropTypes) {
-    switch (type) {
-      case 'increment':
-        dispatch(setSpeed({ index: index, value: speeds[index] + 1 }))
-        break
-      case 'decrement':
-        dispatch(setSpeed({ index: index, value: speeds[index] - 1 }))
-        break
-      default:
-        break
-    }
-  }
-
   return (
     <div css={{ padding: '2rem' }}>
-      <h2>Compare travel speeds</h2>
+      <div css={css(titleStyle, { display: 'flex', justifyContent: 'space-between' })}>
+        <div>Compare travel speeds</div>
+        <div>km/h</div>
+      </div>
       <div css={{ display: 'flex', gap: '2rem' }}>
         {speeds.map((speed, i) => (
           <div key={`speed-${i}`} css={{ flex: 1 }}>
@@ -41,7 +33,6 @@ export function SpeedSelector() {
               consumption={consumptionsPer100Km[i]}
               speed={speed}
               onChange={speedInputChangeHandler}
-              buttonClickHandler={buttonClickHandler}
             />
           </div>
         ))}

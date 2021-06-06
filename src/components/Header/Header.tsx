@@ -10,7 +10,6 @@ export function Header() {
         padding: '1rem',
         margin: 'auto',
         background: 'white',
-        width: '100%',
         justifyContent: 'center',
         boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.07)',
       }}

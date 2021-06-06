@@ -19,10 +19,6 @@ export function DistanceSelector() {
     }
   }
 
-  function onSliderChange(value: string) {
-    dispatch(setDistance(+value))
-  }
-
   return (
     <div css={{ padding: '2rem' }}>
       <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
@@ -46,7 +42,7 @@ export function DistanceSelector() {
         </label>
         <div css={css(titleStyle, { flex: 1, textAlign: 'right' })}>km</div>
       </div>
-      <Slider value={distance} onChange={onSliderChange} />
+      <Slider type="distance" />
     </div>
   )
 }
