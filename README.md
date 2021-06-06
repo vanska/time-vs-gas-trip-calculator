@@ -26,8 +26,10 @@ The goal of the design was to allow the user to quickly change values with slide
 - 🏔 State management with `Redux` and `Redux Toolkit`
 - 💬 Static type checking with `Typescript`
 - 🎨 Styled by `Emotion`
-- 🤖 Hosted by Github pages
+- 🎲 Testing with `Jest`
+- 🤖 Hosted by `Github Pages`
 - 🖼 Designed in `Figma`
+  - [Access Figma prototype here](https://www.figma.com/proto/RnBOZuuElwDDrIT1NbNTev/Trip-calculator?page-id=0%3A1&node-id=19%3A21&viewport=547%2C-2371%2C0.40565285086631775&scaling=scale-down)
 
 ## Development platform
 

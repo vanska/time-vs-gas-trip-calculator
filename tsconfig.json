@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "strict": true,
     "baseUrl": ".",
-    "types": ["@emotion/react/types/css-prop"],
+    "types": ["@emotion/react/types/css-prop", "jest"],
     "paths": {
       "@/*": ["src/*"]
     }
