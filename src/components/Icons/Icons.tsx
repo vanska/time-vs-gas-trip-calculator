@@ -1,5 +1,5 @@
 import React from 'react'
-// import { theme } from '../../theme'
+import { theme } from '../../styles/theme'
 
 const SvgBase = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
@@ -17,8 +17,8 @@ export const IconTime = () => (
     />
     <defs>
       <linearGradient id="paint0_linear" x1="3" y1="12" x2="21.2361" y2="12" gradientUnits="userSpaceOnUse">
-        <stop stopColor="blue" />
-        <stop offset="1" stopColor="lightBlue" />
+        <stop stopColor={theme.colors.blue} />
+        <stop offset="1" stopColor={theme.colors.lightBlue} />
       </linearGradient>
     </defs>
   </SvgBase>
@@ -32,31 +32,9 @@ export const IconGas = () => (
     />
     <defs>
       <linearGradient id="paint0_linear" x1="1" y1="12" x2="23.2885" y2="12" gradientUnits="userSpaceOnUse">
-        <stop stopColor="blue" />
-        <stop offset="1" stopColor="lightBlue" />
+        <stop stopColor={theme.colors.blue} />
+        <stop offset="1" stopColor={theme.colors.lightBlue} />
       </linearGradient>
     </defs>
-  </SvgBase>
-)
-
-export const IconPlus = () => (
-  <SvgBase>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M9 21C9 22.6569 10.3431 24 12 24C13.6569 24 15 22.6569 15 21V15L21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9L15 9V3C15 1.34315 13.6569 0 12 0C10.3431 0 9 1.34315 9 3V9L3 9C1.34315 9 0 10.3431 0 12C0 13.6569 1.34314 15 3 15L9 15V21Z"
-      fill="#A9A9A9"
-    />
-  </SvgBase>
-)
-
-export const IconMinus = () => (
-  <SvgBase>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M24 12C24 13.6569 22.6569 15 21 15L3 15C1.34314 15 -4.07115e-07 13.6569 -2.62268e-07 12C-1.17422e-07 10.3431 1.34315 9 3 9L21 9C22.6569 9 24 10.3431 24 12Z"
-      fill="#A9A9A9"
-    />
   </SvgBase>
 )

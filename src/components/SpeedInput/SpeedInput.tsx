@@ -1,7 +1,9 @@
 import React from 'react'
+import { css } from '@emotion/react'
 import { theme } from '../../styles/theme'
 import { inputBorder } from '../../styles/input'
 import { Slider } from '../Slider/Slider'
+import { flexColumnBase } from '../../styles/flex'
 
 export type ButtonPropTypes = { type: 'increment' | 'decrement'; index: number }
 
@@ -17,10 +19,8 @@ export function SpeedInput({
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
   return (
-    <div css={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <label
-        css={{ display: 'flex', flexDirection: 'column', textAlign: 'center', gap: '1rem', justifyContent: 'center' }}
-      >
+    <div css={flexColumnBase(1)}>
+      <label css={css(flexColumnBase(1), { textAlign: 'center', justifyContent: 'center' })}>
         <input
           css={{
             flex: '0 1 auto',
@@ -29,7 +29,7 @@ export function SpeedInput({
             color: theme.colors.blue,
             width: '5rem',
             textAlign: 'center',
-            fontSize: '2rem',
+            fontSize: theme.text.fontSize.xl,
             backgroundColor: 'transparent',
             ...inputBorder,
           }}

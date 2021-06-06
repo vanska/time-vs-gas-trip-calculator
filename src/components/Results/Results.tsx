@@ -10,12 +10,14 @@ import { pxApp } from '../../styles/padding'
 const resultCard = css(flexColumnBase(1), {
   background: theme.colors.gradient.blue,
   color: 'white',
-  padding: '1rem',
+  padding: theme.space[2],
   borderRadius: theme.border.radius,
   'div:first-child': {
     fontWeight: 500,
   },
 })
+
+const vsStyle = css({ order: 1.5, color: theme.colors.blue, fontWeight: 500, fontSize: theme.text.fontSize.m })
 
 export function Results() {
   const tripTimes = useAppSelector(state => state.calculator.tripTimes)
@@ -30,12 +32,12 @@ export function Results() {
         textAlign: 'center',
       })}
     >
-      <div css={{ fontWeight: 600 }}>Total trip time</div>
+      <div css={{ fontWeight: 500 }}>Total trip time</div>
       <div
         css={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '1rem',
+          gap: theme.space[2],
           alignItems: 'center',
         }}
       >
@@ -48,7 +50,7 @@ export function Results() {
             <div css={css(totalsNumber, { flex: 1, order: i })}>-</div>
           )
         )}
-        <div css={{ order: 1.5, color: theme.colors.blue, fontWeight: 500, fontSize: '1.125rem' }}>vs</div>
+        <div css={vsStyle}>vs</div>
       </div>
       <div css={resultCard}>
         <div>Difference in trip time</div>
@@ -58,7 +60,7 @@ export function Results() {
           <div css={totalsNumber}>-</div>
         )}
       </div>
-      <div css={{ fontWeight: 600 }}>Total gas used</div>
+      <div css={{ fontWeight: 500 }}>Total gas used</div>
       <div
         css={{
           display: 'flex',
@@ -69,18 +71,25 @@ export function Results() {
         {totalConsumptions.map((consumption, i) => (
           <div
             key={`consumption-${i}`}
-            css={{ display: 'flex', justifyContent: 'center', flex: 1, order: i, alignItems: 'baseline', gap: '.5rem' }}
+            css={{
+              display: 'flex',
+              justifyContent: 'center',
+              flex: 1,
+              order: i,
+              alignItems: 'baseline',
+              gap: theme.space[1],
+            }}
           >
             <span css={totalsNumber}>{consumption.toFixed(1)}</span>
             <span>L</span>
           </div>
         ))}
-        <div css={{ order: 1.5, color: theme.colors.blue, fontWeight: 500, fontSize: '1.125rem' }}>vs</div>
+        <div css={vsStyle}>vs</div>
       </div>
       <div css={resultCard}>
         <div>Difference in gas use</div>
         {consumptionDifference ? (
-          <div css={{ display: 'flex', gap: '.5rem', justifyContent: 'center', alignItems: 'baseline' }}>
+          <div css={{ display: 'flex', gap: theme.space[1], justifyContent: 'center', alignItems: 'baseline' }}>
             <span css={totalsNumber}>{consumptionDifference.toFixed(1)}</span>
             <span>litres</span>
           </div>

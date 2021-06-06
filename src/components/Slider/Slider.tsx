@@ -100,7 +100,7 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ type,
               background: theme.colors.background.grey,
               outline: '2px',
               border: `6px solid ${theme.colors.blue}`,
-              borderRadius: 9999,
+              borderRadius: '2rem',
             },
           }}
         />

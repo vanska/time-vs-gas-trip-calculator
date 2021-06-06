@@ -22,8 +22,8 @@ export function CarCard({
         flexDirection: 'column',
         justifyContent: 'center',
         flex: 1,
-        padding: '1rem',
-        borderRadius: '8px',
+        padding: theme.space[2],
+        borderRadius: theme.border.radius,
         outlineColor: theme.colors.blue,
         border: `1px solid ${theme.colors.border.input}`,
         textAlign: 'center',
@@ -37,7 +37,7 @@ export function CarCard({
       onClick={onClick}
       onKeyPress={onClick}
     >
-      <div css={{ fontWeight: 700, fontSize: '2rem' }}>{car.name}</div>
+      <div css={{ fontWeight: 700, fontSize: theme.text.fontSize.xl }}>{car.name}</div>
       <div>{`${car.baseConsumption}L / 100km`}</div>
     </div>
   )
