@@ -3,7 +3,6 @@ import { Provider } from 'react-redux'
 import { store } from '../../redux/store'
 import { Global } from '@emotion/react'
 import { theme } from '../../styles/theme'
-import { Helmet } from 'react-helmet'
 export interface RootWrapperProps {
   children: React.ReactNode
 }
@@ -11,13 +10,6 @@ export interface RootWrapperProps {
 const RootWrapper = ({ children }: RootWrapperProps) => {
   return (
     <Provider store={store}>
-      <Helmet>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0"
-        />
-      </Helmet>
       <Global
         styles={{
           'html,button,input': {

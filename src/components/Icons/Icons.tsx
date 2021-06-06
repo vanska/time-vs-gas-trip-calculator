@@ -18,7 +18,7 @@ export const IconTime = () => (
     <defs>
       <linearGradient id="paint0_linear" x1="3" y1="12" x2="21.2361" y2="12" gradientUnits="userSpaceOnUse">
         <stop stopColor={theme.colors.blue} />
-        <stop offset="1" stopColor={theme.colors.lightBlue} />
+        <stop offset="1" stopColor={theme.colors.darkBlue} />
       </linearGradient>
     </defs>
   </SvgBase>
@@ -33,7 +33,7 @@ export const IconGas = () => (
     <defs>
       <linearGradient id="paint0_linear" x1="1" y1="12" x2="23.2885" y2="12" gradientUnits="userSpaceOnUse">
         <stop stopColor={theme.colors.blue} />
-        <stop offset="1" stopColor={theme.colors.lightBlue} />
+        <stop offset="1" stopColor={theme.colors.darkBlue} />
       </linearGradient>
     </defs>
   </SvgBase>

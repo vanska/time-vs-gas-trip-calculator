@@ -1,5 +1,5 @@
-const blue = '#0074FD'
-const lightBlue = '#61A9FF'
+const blue = '#0069E5'
+const darkBlue = '#0075FF'
 
 export const theme = {
   breakpoints: {
@@ -8,16 +8,16 @@ export const theme = {
   },
   colors: {
     blue: blue,
-    lightBlue: lightBlue,
+    darkBlue: darkBlue,
     background: {
       grey: '#F6F6F6',
     },
     gradient: {
-      blue: `linear-gradient(180deg, ${blue} 0%, ${lightBlue} 100%)`,
+      blue: `linear-gradient(180deg, ${blue} 0%, ${darkBlue} 100%)`,
     },
     text: {
       body: '#404040',
-      secondary: '#909090',
+      secondary: '#545454',
     },
     border: {
       input: '#C9C9C9',
