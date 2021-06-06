@@ -8,7 +8,7 @@ export const CARS = [
 
 export const CONSUMPTION_MULTIPLIER = 1.009
 export const INITIAL_DISTANCE = 500
-export const INITIAL_SPEEDS = [80, 120]
+export const INITIAL_SPEEDS = [100, 125]
 
 export const INITIAL_TIMES_SPENT = INITIAL_SPEEDS.map(speed => calculateTimeSpent(INITIAL_DISTANCE, speed))
 

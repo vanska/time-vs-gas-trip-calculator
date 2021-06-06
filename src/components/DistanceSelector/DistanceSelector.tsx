@@ -7,6 +7,7 @@ import { theme } from '../../styles/theme'
 import { distanceRegex } from '../../utils/regExes'
 import { titleStyle } from '../../styles/text'
 import { inputBorder } from '../../styles/input'
+import { pxApp } from '../../styles/padding'
 
 export function DistanceSelector() {
   const dispatch = useAppDispatch()
@@ -20,9 +21,9 @@ export function DistanceSelector() {
   }
 
   return (
-    <div css={{ padding: '2rem' }}>
+    <div css={pxApp}>
       <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-        <div css={css(titleStyle, { flex: 1 })}>Trip distance</div>
+        <div css={css(titleStyle, { flex: 1 })}>Set trip distance</div>
         <label css={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <input
             css={{

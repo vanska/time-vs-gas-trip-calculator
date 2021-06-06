@@ -77,7 +77,6 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ type,
           value={type === 'distance' ? distance : speeds[speedIndex ? speedIndex : 0]}
           name={type === 'speed' && speedIndex ? speedIndex.toString() : ''}
           type="range"
-          tabIndex={-1}
           onChange={onSliderChangeInternalHandler}
           css={{
             display: 'block',
@@ -88,9 +87,10 @@ export const Slider = React.forwardRef<TInputRef, Props>(function Slider({ type,
             appearance: 'none',
             borderRadius: 9999,
             color: 'inherit',
+            outlineColor: theme.colors.blue,
+            outlineOffset: '.25rem',
             background: theme.colors.gradient.blue,
             ':focus': {
-              outline: 'none',
               color: 'primary',
             },
             '&::-webkit-slider-thumb': {

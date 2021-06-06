@@ -2,9 +2,11 @@ import React from 'react'
 import { css } from '@emotion/react'
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 import { setSpeed } from '../../redux/calculatorSlice'
-import { SpeedInput, ButtonPropTypes } from '../SpeedInput/SpeedInput'
+import { SpeedInput } from '../SpeedInput/SpeedInput'
 import { speedRegEx } from '../../utils/regExes'
 import { titleStyle } from '../../styles/text'
+import { pxApp } from '../../styles/padding'
+import { flexColumnBase } from '../../styles/flex'
 
 export function SpeedSelector() {
   const dispatch = useAppDispatch()
@@ -20,8 +22,8 @@ export function SpeedSelector() {
   }
 
   return (
-    <div css={{ padding: '2rem' }}>
-      <div css={css(titleStyle, { display: 'flex', justifyContent: 'space-between' })}>
+    <div css={css(pxApp, flexColumnBase(1))}>
+      <div css={css(titleStyle, { display: 'flex', justifyContent: 'space-between', gap: '1rem' })}>
         <div>Compare travel speeds</div>
         <div>km/h</div>
       </div>
