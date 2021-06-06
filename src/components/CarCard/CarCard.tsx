@@ -15,8 +15,8 @@ export function CarCard({
       css={{
         background: selected ? theme.colors.gradient.blue : 'white',
         color: `${selected ? 'white' : theme.colors.text}`,
-        boxShadow: selected ? '0px 8px 12px rgba(0, 0, 0, 0.15)' : '0px 0px 0px rgba(0, 0, 0, 0)',
-        transform: selected ? `translateY(-1rem)` : 'translateY(0)',
+        boxShadow: selected ? '0px 4px 8px rgba(0, 0, 0, 0.15)' : '0px 0px 0px rgba(0, 0, 0, 0)',
+        transform: selected ? `translateY(-8px)` : 'translateY(0)',
         transition: 'transform .1s ease-in-out, box-shadow .1s ease-in-out',
         flex: 1,
         padding: '1rem',

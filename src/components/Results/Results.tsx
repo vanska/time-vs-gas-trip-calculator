@@ -49,7 +49,7 @@ export function Results() {
       <div css={resultCard}>
         <div>Difference in trip time</div>
         {tripTimeDifference ? (
-          <TimeDisplay display="long" minutes={tripTimes[0] - tripTimes[1]} />
+          <TimeDisplay display="long" minutes={tripTimeDifference} />
         ) : (
           <div css={totalsNumber}>-</div>
         )}

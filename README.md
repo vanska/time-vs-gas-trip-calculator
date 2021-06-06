@@ -32,6 +32,7 @@ The goal of the design was to allow the user to quickly change values with slide
 ## Development platform
 
 - Windows 10 with WSL2 inside VSCode
+- Tested with `Chrome @91.0.4472.77`
 
 ## Setting up development
 
