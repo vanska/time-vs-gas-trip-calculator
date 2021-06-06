@@ -8,7 +8,7 @@ const config = {
   // Keywords describing the project. Used in SEO meta tag
   keywords: ['gatsby', 'react', 'typescript', 'jest', 'pwa', 'graphql'],
   // Absolute deployment path (without trailing slash). Used as base URL in SEO meta tags
-  baseUrl: 'https://time-vs-gas.vanska.dev',
+  baseUrl: 'https://vanska.github.io/trip-vs-gas-trip-calculator',
   // Site language. Added in html tag and PWA manifest
   lang: 'en',
   // Your username on Facebook. Used in SEO meta tags
@@ -24,6 +24,7 @@ const config = {
 }
 
 module.exports = {
+  pathPrefix: '/trip-vs-gas-trip-calculator',
   siteMetadata: {
     title: config.title,
     description: config.description,
